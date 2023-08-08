@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+
+        <title>Journal</title>
+        <link rel = "icon" href = "css/media/logo.png" type = "image/x-icon">
+
+        <link rel = "stylesheet" href = "css/journal.css">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        <script defer src="js/journal.js"></script>
+</head>
+
+<body>
+
+<div class="optionsContainer">
+
+        <label class="switch">
+                  <input type="checkbox" id="chkBox" onclick="myFunction()">
+                  <span class="slider round"></span>
+        </label>
+
+        <button id="checkAuto" onclick="myFunction2()"><img src="css/media/auto.png" id="autoImg"></button>
+
+        <a href="#" id="loginPage"><img src="css/media/logout.png" id="logout" onclick="curtainOff()"></a>
+
+        <a href="#" id="gotoSheet"><img src="css/media/goto.png" id="goSheet"></a>
+
+        <span class="rightArr"><img src="css/media/rightArr.png" id="takeOut"></span>
+</div>
+
+
+<div class="codeContainer">
+
+        <div class="c" id="cBut1" onclick="triggerCodeOpen()"><span>c</span></div>
+        <div class="c" id="cBut2" onclick="triggerCodeClose()"><span>c</span></div>
+
+        <div class="disclose" id="discloseCode">
+                <input type="text" id="inpCode" class="code" name="passCode" placeholder="Code"  autocomplete="off" required>
+        </div>
+
+</div>
+
+
+<div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12 buttoncontainer">
+
+        <div class = "col-xs-6 col-sm-3 col-md-3 col-lg-3 maindiv">
+                <div class = "buttoneffect">
+                        <button class = "effect" data-modal-target="#modal" onclick = "unhide1()">
+                                <span class = "htext">Day</br>Evaluation</span>
+                        </button>
+                </div>
+        </div>
+
+        <div class = "col-xs-6 col-sm-3 col-md-3 col-lg-3 maindiv">
+                <div class = "buttoneffect">
+                        <button class = "effect" data-modal-target="#modal" onclick = "unhide2()">
+                                <span class = "htext">Hobbies,</br>Sleep</span>
+                        </button>
+                </div>
+        </div>
+
+        <div class = "col-xs-6 col-sm-3 col-md-3 col-lg-3 maindiv">
+                <div class = "buttoneffect">
+                        <button class = "effect" data-modal-target="#modal" onclick = "unhide3()">
+                                <span class = "htext">Gratitude,</br>Memories</span>
+                        </button>
+                </div>
+        </div>
+
+        <div class = "col-xs-6 col-sm-3 col-md-3 col-lg-3 maindiv">
+                <div class = "buttoneffect">
+                        <button class = "effect" data-modal-target="#modal" onclick = "unhide4()">
+                                <span class = "htext">Meals</span>
+                        </button>
+                </div>
+        </div>
+
+        <div class = "col-xs-6 col-sm-3 col-md-3 col-lg-3 maindiv">
+                <div class = "buttoneffect">
+                        <button class = "effect" data-modal-target="#modal" onclick = "unhide5()">
+                                <span class = "htext">Expenses</span>
+                        </button>
+                </div>
+        </div>
+
+        <div class = "col-xs-6 col-sm-3 col-md-3 col-lg-3 maindiv">
+                <div class = "buttoneffect">
+                        <button class = "effect" data-modal-target="#modal" onclick = "unhide6()">
+                                <span class = "htext">Diary</span>
+                        </button>
+                </div>
+        </div>
+
+</div>
+
+
+<div class="modalParent">
+
+<div class="modal" id="modal">
+        <div class="modal-header">
+                <div class="title" id="formName">Form Name</div>
+                <button data-close-button class="close-button">&times;</button>
+        </div>
+
+        <div class = "hline"></div>
+
+        <form class = "forms form1"
+              method = "POST" 
+              action = ""
+              autocomplete = "off">
+
+                <div class="contactForm">
+
+                        <input type="hidden" name="shHidden" value="Day_eval">
+
+                        <input type="date" name="Date" placeholder="dd-mm-yyyy" value="" class="formDate" required>
+
+                        <fieldset class="formBox">
+                        <legend>Productivity</legend>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                    <td>Learnt anything today?</td>
+                                                    <td class="opt">
+                                                            <label for="y11"><input type="radio" name="Learning" id="y11" value="1" required>Yes</label><br>
+                                                            <label for="n11"><input type="radio" name="Learning" id="n11" value="0">No</label>
+                                                    </td>                                                  
+                                        </tr></table>
+                                </div>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                    <td>Been in your flow?</td>
+                                                    <td class="opt">
+                                                            <label for="y12"><input type="radio" name="Flow" id="y12" value="1" required>Yes</label><br>
+                                                            <label for="n12"><input type="radio" name="Flow" id="n12" value="0">No</label>
+                                                    </td>                                                  
+                                        </tr></table>
+                                </div>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                    <td>Did you achieve anything?</td>
+                                                    <td class="opt">
+                                                            <label for="y13"><input type="radio" name="Achievement" id="y13" value="1" required>Yes</label><br>
+                                                            <label for="n13"><input type="radio" name="Achievement" id="n13" value="0">No</label>
+                                                    </td>                                                  
+                                        </tr></table>
+                                </div>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                    <td>Was it a +ve eventful day?</td>
+                                                    <td class="opt">
+                                                            <label for="y14"><input type="radio" name="PositiveEvent" id="y14" value="1" required>Yes</label><br>
+                                                            <label for="n14"><input type="radio" name="PositiveEvent" id="n14" value="0">No</label>
+                                                    </td>                                                  
+                                        </tr></table>
+                                </div>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                    <td>Was it a -ve eventful day?</td>
+                                                    <td class="opt">
+                                                            <label for="y15"><input type="radio" name="NegativeEvent" id="y15" value="1" required>Yes</label><br>
+                                                            <label for="n15"><input type="radio" name="NegativeEvent" id="n15" value="0">No</label>
+                                                    </td>                                                  
+                                        </tr></table>
+                                </div>
+                        </fieldset>
+
+                        <fieldset class="formBox">
+                        <legend>Emotions</legend>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                    <td>Were you happy today?</td>
+                                                    <td class="opt">
+                                                            <label for="y21"><input type="radio" name="Happy" id="y21" value="1" required>Yes</label><br>
+                                                            <label for="n21"><input type="radio" name="Happy" id="n21" value="0">No</label>
+                                                    </td>                                                  
+                                        </tr></table>
+                                </div>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                    <td>Were you angry today?</td>
+                                                    <td class="opt">
+                                                            <label for="y22"><input type="radio" name="Angry" id="y22" value="1" required>Yes</label><br>
+                                                            <label for="n22"><input type="radio" name="Angry" id="n22" value="0">No</label>
+                                                    </td>                                                  
+                                        </tr></table>
+                                </div>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                    <td>Feeling tired today?</td>
+                                                    <td class="opt">
+                                                            <label for="y23"><input type="radio" name="Tired" id="y23" value="1" required>Yes</label><br>
+                                                            <label for="n23"><input type="radio" name="Tired" id="n23" value="0">No</label>
+                                                    </td>                                                  
+                                        </tr></table>
+                                </div>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                    <td>Been impatient?</td>
+                                                    <td class="opt">
+                                                            <label for="y24"><input type="radio" name="Impatient" id="y24" value="1" required>Yes</label><br>
+                                                            <label for="n24"><input type="radio" name="Impatient" id="n24" value="0">No</label>
+                                                    </td>                                                  
+                                        </tr></table>
+                                </div>
+                        </fieldset>
+
+                        <fieldset class="formBox">
+                        <legend>Deeds</legend>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                    <td>Did you hurt anyone?</td>
+                                                    <td class="opt">
+                                                            <label for="y31"><input type="radio" name="Hurt_anyone" id="y31" value="1" required>Yes</label><br>
+                                                            <label for="n31"><input type="radio" name="Hurt_anyone" id="n31" value="0">No</label>
+                                                    </td>                                                  
+                                        </tr></table>
+                                </div>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                    <td>Did anyone hurt you?</td>
+                                                    <td class="opt">
+                                                            <label for="y32"><input type="radio" name="Anyone_hurt_you" id="y32" value="1" required>Yes</label><br>
+                                                            <label for="n32"><input type="radio" name="Anyone_hurt_you" id="n32" value="0">No</label>
+                                                    </td>                                                  
+                                        </tr></table>
+                                </div>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                    <td>Been good to anyone?</td>
+                                                    <td class="opt">
+                                                            <label for="y33"><input type="radio" name="Good_to_anyone" id="y33" value="1" required>Yes</label><br>
+                                                            <label for="n33"><input type="radio" name="Good_to_anyone" id="n33" value="0">No</label>
+                                                    </td>                                                  
+                                        </tr></table>
+                                </div>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                    <td>Was anyone good to you?</td>
+                                                    <td class="opt">
+                                                            <label for="y34"><input type="radio" name="Anyone_good_to_you" id="y34" value="1" required>Yes</label><br>
+                                                            <label for="n34"><input type="radio" name="Anyone_good_to_you" id="n34" value="0">No</label>
+                                                    </td>                                                  
+                                        </tr></table>
+                                </div>
+                        </fieldset>
+
+                        <div class="inputBox three">
+                                <button type="submit" class="subBtn submit1">Send</button>
+                        </div> 
+                </div>
+        </form>
+
+        <form class = "forms form2"
+              method = "POST" 
+              action = ""
+              autocomplete = "off">
+
+                <div class="contactForm">
+
+                        <input type="hidden" name="shHidden" value="Sl_Hob">
+
+                        <input type="date" name="Date" placeholder="dd-mm-yyyy" value="" class="formDate" required>
+
+                        <fieldset class="formBox">
+                        <legend>Sleep</legend>
+                                <div class="inputBox">
+                                        <input type="text" name="Slept" placeholder="Slept" required>
+                                        <input type="text" name="WokeUp" placeholder="Woke up" required>
+                                </div>
+                        </fieldset>
+
+                        <fieldset class="formBox">
+                        <legend>Hobbies</legend>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                        <td>Cooking</td>
+                                                        <td class="hobopt"><label for="y11"><input type="radio" name="Cooking" id="y11" value="1" required>Yes</label></td>
+                                                        <td class="hobopt"><label for="n11"><input type="radio" name="Cooking" id="n11" value="0">No</label></td>                                                  
+                                        </tr></table>
+                                </div>
+                                <div class="inputBox">
+                                        <table><tr>
+                                                        <td>BhagwadGita</td>
+                                                        <td class="hobopt"><label for="y21"><input type="radio" name="BhagwadGita" id="y21" value="1" required>Yes</label></td>
+                                                        <td class="hobopt"><label for="n21"><input type="radio" name="BhagwadGita" id="n21" value="0">No</label></td>                                                  
+                                        </tr></table>
+                                </div>  
+                        </fieldset>
+
+                        <div class="inputBox three">
+                                <button type="submit" class="subBtn submit2">Send</button>
+                        </div>
+
+                </div>
+        </form>
+
+        <form class = "forms form3"
+              method = "POST" 
+              action = ""
+              autocomplete = "off">
+
+                <div class="contactForm">
+
+                        <input type="hidden" name="shHidden" value="Grat_mem">
+
+                        <input type="date" name="Date" placeholder="dd-mm-yyyy" value="" class="formDate" required>
+
+                        <fieldset class="formBox">
+                        <legend>Gratitude</legend>
+                                <div class="inputBox">
+                                        <textarea id="text31" name="Gratitude" placeholder="Gratitude description"></textarea>
+                                </div>  
+                        </fieldset>
+
+                        <fieldset class="formBox">
+                        <legend>Memories</legend>
+                                <div class="inputBox">
+                                        <textarea id="text32" name="Memories" placeholder="Memory description"></textarea>
+                                </div>  
+                        </fieldset>
+
+                        <fieldset class="formBox">
+                        <legend>Trips & Travel</legend>
+                                <div class="inputBox">
+                                        <input type="text" name="Place" placeholder="Location">
+                                        <textarea id="text33" name="Description" placeholder="Trip description"></textarea>
+                                </div>  
+                        </fieldset>
+
+                        <div class="inputBox three">
+                                <button type="submit" class="subBtn submit3">Send</button>
+                        </div>
+
+                </div>
+        </form>
+
+
+        <form class = "forms form4"
+              method = "POST" 
+              action = ""
+              autocomplete = "off">
+
+                <div class="contactForm">
+
+                        <input type="hidden" name="shHidden" value="Meals">
+
+                        <input type="date" name="Date" placeholder="dd-mm-yyyy" value="" class="formDate" required>
+
+                        <fieldset class="formBox">
+                        <legend>Breakfast</legend>
+                                <div class="inputBox">
+                                        <input type="text" name="Br_time" placeholder="Time" required="">
+                                        <input type="text" name="Br_capacity" placeholder="Capacity" required="">
+                                </div>
+                                <div class="inputBox">
+                                        <textarea id="text41" name="Br_content" placeholder="Breakfast content" required=""></textarea>
+                                </div>  
+                        </fieldset>
+
+                        <fieldset class="formBox">
+                        <legend>Lunch</legend>
+                                <div class="inputBox">
+                                        <input type="text" name="Ln_time" placeholder="Time" required="">
+                                        <input type="text" name="Ln_capacity" placeholder="Capacity" required="">
+                                </div>
+                                <div class="inputBox">
+                                        <textarea id="text42" name="Ln_content" placeholder="Lunch content" required=""></textarea>
+                                </div>  
+                        </fieldset>
+
+                        <fieldset class="formBox">
+                        <legend>Snack</legend>
+                                <div class="inputBox">
+                                        <input type="text" name="Sn_time" placeholder="Time" required="">
+                                        <input type="text" name="Sn_capacity" placeholder="Capacity" required="">
+                                </div>
+                                <div class="inputBox">
+                                        <textarea id="text43" name="Sn_content" placeholder="Snacks content" required=""></textarea>
+                                </div>  
+                        </fieldset>
+
+                        <fieldset class="formBox">
+                        <legend>Dinner</legend>
+                                <div class="inputBox">
+                                        <input type="text" name="Dn_time" placeholder="Time" required="">
+                                        <input type="text" name="Dn_capacity" placeholder="Capacity" required="">
+                                </div>
+                                <div class="inputBox">
+                                        <textarea id="text44" name="Dn_content" placeholder="Dinner content" required=""></textarea>
+                                </div>  
+                        </fieldset>
+
+                        <div class="inputBox three">
+                                <button type="submit" class="subBtn submit4">Send</button>
+                        </div>
+                </div>
+        </form>
+
+        <form class = "forms form5"
+              method = "POST" 
+              action = ""
+              autocomplete = "off">
+
+                <div class="contactForm">
+
+                        <input type="hidden" name="shHidden" value="Expense">
+
+                        <input type="date" name="Date" placeholder="dd-mm-yyyy" value="" class="formDate" required>
+
+                        <fieldset class="formBox">
+                        <legend>Spending</legend>
+                                <div class="inputBox">
+                                        <textarea id="text51" name="Particulars" placeholder="Particulars" required=""></textarea>
+                                </div>
+                                <div class="inputBox">
+                                        <input type="text" name="Value" placeholder="Value">
+                                        <input type="text" name="Invest" placeholder="Invest">
+                                        <input type="text" name="CrCard" placeholder="Cr card">
+                                </div>
+                                <div class="inputBox">
+                                        <select name="Category" id="cat" required>
+                                                <option value="" disabled selected hidden>Category</option>
+                                                <option value="Bills_Utilities">Bills & Utilities</option>
+                                                <option value="Charity">Charity</option>
+                                                <option value="Entertainment">Entertainment</option>
+                                                <option value="Family">Family</option>
+                                                <option value="Fuel">Fuel</option>
+                                                <option value="Gift">Gift</option>
+                                                <option value="Grocery">Grocery</option>
+                                                <option value="Healthcare">Healthcare</option>
+                                                <option value="Hobbies">Hobbies</option>
+                                                <option value="Investment">Investment</option>
+                                                <option value="Learning">Learning</option>
+                                                <option value="Meal">Meal</option>
+                                                <option value="Miscellaneous">Miscellaneous</option>
+                                                <option value="Party">Party</option>
+                                                <option value="Personal">Personal</option>
+                                                <option value="Service_Repairs">Service & Repairs</option>
+                                                <option value="Shopping">Shopping</option>
+                                                <option value="Snacks">Snacks</option>
+                                                <option value="Telecom">Telecom</option>
+                                                <option value="Transportation">Transportation</option>
+                                                <option value="Trip_Tour">Trip & Tour</option>
+                                        </select>
+                                        <select name="Mode" id="mod" required>
+                                                <option value="" disabled selected hidden>Mode</option>
+                                                <option value="CASH">Cash</option>
+                                                <option value="FE CRD">Forex Card</option>
+                                                <option value="HDFC ACNT">HDFC Account</option>
+                                                <option value="HOP CARD">HOP Card</option>
+                                                <option value="JRB ACNT">JRB Account</option>
+                                                <option value="JTB GIFT CRD">JTB Gift Card</option>
+                                        </select>
+                                </div>                                
+                                <div class="inputBox">
+                                        <textarea id="text52" name="Note" placeholder="Notes"></textarea>
+                                </div> 
+                        </fieldset>
+
+                        <div class="inputBox three">
+                                <button type="submit" class="subBtn submit5">Send</button>
+                        </div>
+
+                </div>
+        </form>
+
+        <form class = "forms form6"
+              method = "POST" 
+              action = ""
+              autocomplete = "off">
+
+                <div class="contactForm">
+
+                        <input type="hidden" name="shHidden" value="Diary">
+
+                        <input type="date" name="Date" placeholder="dd-mm-yyyy" value="" class="formDate" required>
+
+                        <fieldset class="formBox">
+                        <legend>Diary</legend>
+                                <div class="inputBox">
+                                        <textarea id="text61" name="Description" placeholder="How was your day?" required></textarea>
+                                </div>  
+                        </fieldset>
+
+                        <div class="inputBox">
+                                <button type="submit" class="subBtn submit6">Send</button>
+                        </div>
+                </div>
+        </form>
+
+
+</div>
+</div>
+
+<div id="overlay"></div>
+
+
+<div class="sheetContainer" id="showSheet">
+
+        <div class="baseFrame" id="frameSheet">
+                <iframe id="sheet">
+                </iframe>
+        </div>
+
+        <div class="curtain" onclick="curtainOpen()">
+
+                <div class="curt" id="curtLeft"></div>
+                <div class="curt" id="curtRight"></div>
+
+        </div>
+        
+
+</div>
+
+
+<footer>&copy;&nbsp;Developed by Kedar Wadhavkar</footer>
+
+<script src="js/sha256.js"></script>
+<script>
+
+        function triggerCodeOpen(){
+        
+                document.getElementById("discloseCode").style.right = "0%";
+                document.getElementById("cBut1").style.zIndex = "1";
+                document.getElementById("cBut2").style.zIndex = "2";
+                setTimeout(() => document.getElementById("inpCode").focus(), 500);
+        }
+
+        function triggerCodeClose(){
+        
+                document.getElementById("discloseCode").style.right = "-100%";
+                document.getElementById("cBut1").style.zIndex = "2";
+                document.getElementById("cBut2").style.zIndex = "1";
+
+                var inp = document.getElementById("inpCode").value
+                var pass = sha256(inp);
+                var st1 = "https://docs.google.com/spreadsheets/d/1MRuPrDCQIO41bNrxWPqpgBk0v6GP6gZV";
+                var st2 = "JPqidA/pubhtml?widget=true&amp;chrome=false&amp;headers=false"
+                var st3 = "JPqidA/edit?usp=sharing"
+                var st4 = st1.concat(inp).concat(st2);
+                var st5 = st1.concat(inp).concat(st3);
+
+                if(pass.slice(-20) === "8db46d1145a346f6317b"){
+                        document.getElementById("showSheet").style.display = "block"
+                            var ifram = document.getElementById("sheet");
+                            var goSheet = document.getElementById("gotoSheet");
+                            ifram.setAttribute("src", st4);
+                            goSheet.setAttribute("href", st5);
+                }
+
+                document.getElementById("inpCode").value = ""
+        }
+
+        var a = "closed"
+
+        function curtainOpen(){
+                document.getElementById("curtLeft").style.transition = "0.6s";
+                document.getElementById("curtRight").style.transition = "0.6s";
+                document.getElementById("curtLeft").style.transform = "translate(-102%, 0)";
+                document.getElementById("curtRight").style.transform = "translate(102%, 0)";
+                setTimeout(() => document.getElementById("curtLeft").style.transition = "0s", 600);
+                setTimeout(() => document.getElementById("curtRight").style.transition = "0s", 600);
+                a = "opened"
+        }
+
+
+        function curtainClose(){
+                document.getElementById("curtLeft").style.transition = "0.6s";
+                document.getElementById("curtRight").style.transition = "0.6s";
+                document.getElementById("curtLeft").style.transform = "translate(0, 0)";
+                document.getElementById("curtRight").style.transform = "translate(0, 0)";
+                setTimeout(() => document.getElementById("curtLeft").style.transition = "0s", 600);
+                setTimeout(() => document.getElementById("curtRight").style.transition = "0s", 600);
+                a = "closed"
+        }
+
+        document.addEventListener('mouseup', function(e) {
+                    var frame = document.getElementById('frameSheet');
+                    if ((a === "opened") && !frame.contains(e.target)) {
+                        curtainClose()
+                    }
+        });
+
+
+        function curtainOff(){
+                document.getElementById("showSheet").style.display = "none";
+                
+        }
+
+
+</script>
+
+
+</body>
+
+</html>
