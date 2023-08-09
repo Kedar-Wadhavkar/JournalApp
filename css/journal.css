@@ -801,11 +801,11 @@ legend{
         margin-bottom: 3%;
 }
 
-.form1 #submit{
+.form1 .subBtn{
         margin-left: -1.5%;
 }
 
-.form2 #submit{
+.form2 .subBtn{
         margin-left: -1.5%;
         margin-top: -2%;
 }
