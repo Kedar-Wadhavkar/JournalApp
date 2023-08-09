@@ -1,11 +1,4 @@
-
-
-
-
-
-
-
- body = document.querySelector('body');
+const body = document.querySelector('body');
 
 var checkBox = document.getElementById("chkBox");
 var checkAuto = document.getElementById("checkAuto");
@@ -239,18 +232,3 @@ function act(){
         }, { once: true });
 
 }
-
-
-
-let notification;
-document.addEventListener("pushNotification", () => {
-
-if (document.visibilityState === "hidden") {
-notification = new Notification("Fill your Journal",{
-body: "How was your day?"
-});
-}
-else {
-notification.close();
-}
-})
