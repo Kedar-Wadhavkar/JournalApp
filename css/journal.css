@@ -508,8 +508,8 @@ input:checked + .slider:before {
         width: 2rem;
         height: 1rem;
         border-radius: 10px 10px 10px 0;
-        border: 1.5px solid #bbb;
-        box-shadow: 0 0 6px 0px #ccc;
+        /*border: 1.5px solid #bbb;
+        box-shadow: 0 0 6px 0px #ccc;*/
         padding-bottom: 1.9rem;
         cursor: pointer;
 }
