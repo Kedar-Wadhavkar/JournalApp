@@ -504,7 +504,7 @@ input:checked + .slider:before {
         float: right;
         margin-top: 0.2rem;
         margin-bottom: 0.2rem;
-        background-color: #efefe2;
+        /*background-color: #efefe2;*/
         width: 2rem;
         height: 1rem;
         border-radius: 10px 10px 10px 0;
